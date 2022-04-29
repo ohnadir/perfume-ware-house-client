@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
 import auth from '../firebase.init';
 import { useAuthState, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
@@ -10,8 +10,11 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
+    let location = useLocation();
     const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
     const [signInWithGoogle, user1] = useSignInWithGoogle(auth);
+
+    let from = location.state?.from?.pathname || "/";
     if (user) {
         const url = 'http://localhost:5000/login';
         fetch(url, {
@@ -27,14 +30,14 @@ const Login = () => {
             .then((data) => {
                 console.log(data)
                 localStorage.setItem('accessToken', data.token)
-                navigate('/home');
+                navigate(from, { replace: true });
             });
         
     } 
 
 
     if (user1) {
-        navigate('/home');
+        navigate(from, { replace: true });
     }
 
     // handle Email
