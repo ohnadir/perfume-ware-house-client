@@ -1,11 +1,19 @@
-# Getting Started with Create React App
+# Getting Started with Perfume wareHouse
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Perfume wareHouse](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
 In the project directory, you can run:
 
+* This is perfume wareHouse  Web site
+* In the top this web you did see navbar with hamburger menu 
+* In the Home page Contains carousel, inventory, review-section, product-discount-section and footer;
+* inventory also container a button where if someone click this button go to inventory route;
+* If someone see criteria at first sign-in with email and password or continue with google ;
+* In this is web site i use tailwind and tailwind component . Tailwind component provides , carousel, accordion etc;
+* Implement email verification;
+* For database i used mongodb and jwt for api secure purpose ;    
 ### `npm start`
 
 Runs the app in the development mode.\

@@ -24,9 +24,13 @@ const Login = () => {
         },
     })
     .then((response) => response.json())
-    .then((json) => console.log(json));
-        navigate('/home');
-    }
+            .then((data) => {
+                console.log(data)
+                localStorage.setItem('accessToken', data.token)
+                navigate('/home');
+            });
+        
+    } 
 
 
     if (user1) {
