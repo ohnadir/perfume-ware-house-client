@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import HomeInventory from '../HomeInventory/HomeInventory';
 import usePerfumes from '../Hooks/usePerfumes';
 import Review from '../Review/Review';
@@ -6,6 +7,10 @@ import Slider from '../Slider/Slider';
 
 const Home = () => {
     const [perfumes] = usePerfumes();
+    const navigate = useNavigate();
+    const handleManageInventories = () => {
+        navigate('/inventory');
+    }
     return (
         <div>
             <Slider></Slider>
@@ -22,7 +27,10 @@ const Home = () => {
                                     perfume={perfume}
                                 ></HomeInventory>)
                             }
-                       </div>
+                        </div>
+                        <div className='flex justify-center mt-10'>
+                            <button onClick={handleManageInventories} className='bg-red-600 text-white px-2 py-[4px]'>Manage Inventories</button>
+                        </div>
                    </div>
                 </div>
             </div>
