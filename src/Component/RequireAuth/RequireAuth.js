@@ -17,7 +17,7 @@ function RequireAuth({ children }) {
     return <Navigate to="/login" state={{ from: location }} replace />;
   }
   
-  if(user.providerData[0]?.providerId==='password' && !user.emailVerified) {
+  if(!user.emailVerified) {
     return (
       <div className='flex justify-center items-center h-[93vh]'>
         <div>

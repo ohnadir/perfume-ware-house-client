@@ -13,9 +13,9 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
     let location = useLocation();
-    const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
+    const [signInWithEmailAndPassword, error] = useSignInWithEmailAndPassword(auth);
     const [signInWithGoogle, user1] = useSignInWithGoogle(auth);
-    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+    const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
 
     let from = location.state?.from?.pathname || "/";
     if (user) {
@@ -77,6 +77,7 @@ const Login = () => {
                         <div className='mb-8'>
                             <input onChange={handlePassword} className='w-full px-2 py-[5px] bg-gray-100 border-0' placeholder='Password' type="password" name="" id="" />
                         </div>
+
                         <button onClick={handleLogin} className='w-full bg-cyan-600 py-2 text-white' type='submit'>Login</button>
 
                         <div className='flex justify-between justify-center mt-2'>

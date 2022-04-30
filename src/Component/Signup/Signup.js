@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useAuthState, useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../firebase.init'
-// import { useSendEmailVerification } from 'react-firebase-hooks/auth';
-import Spinner from '../Spinner/Spinner';
-import { toast } from 'react-toastify';
 
 const Signup = () => {
     const [agree, setAgree] = useState(false);
@@ -16,11 +13,6 @@ const Signup = () => {
     const [createUserWithEmailAndPassword, user] = useCreateUserWithEmailAndPassword(auth);
     const [signInWithGoogle, user1] = useSignInWithGoogle(auth);
     const navigate = useNavigate();
-    // const [sendEmailVerification, sending] = useSendEmailVerification(auth);
-
-    /* if (sending) {
-        <Spinner></Spinner>
-    } */
     if (user) {
         navigate('/home');
     }
