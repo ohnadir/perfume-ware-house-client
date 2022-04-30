@@ -12,21 +12,21 @@ const Slider = () => {
             </div>
             <div className="carousel-inner relative w-full overflow-hidden">
                 <div className="carousel-item active relative float-left w-full">
-                    <img src={photo} className="block w-full" alt="..."/>
+                    <img src={photo} className="block w-full h-[500px]" alt="..."/>
                     <div className="carousel-caption hidden md:block absolute text-center">
                         <h5 className="text-xl">First slide label</h5>
                         <p>Some representative placeholder content for the first slide.</p>
                     </div>
                 </div>
                 <div className="carousel-item relative float-left w-full">
-                    <img src={photo} className="block w-full" alt="..."/>
+                    <img src={photo} className="block w-full h-[500px]" alt="..."/>
                     <div className="carousel-caption hidden md:block absolute text-center">
                         <h5 className="text-xl">Second slide label</h5>
                         <p>Some representative placeholder content for the second slide.</p>
                     </div>
                 </div>
                 <div className="carousel-item relative float-left w-full">
-                    <img src={photo} className="block w-full" alt="..."/>
+                    <img src={photo} className="block w-full h-[500px]" alt="..."/>
                     <div className="carousel-caption hidden md:block absolute text-center">
                         <h5 className="text-xl">Third slide label</h5>
                         <p>Some representative placeholder content for the third slide.</p>

@@ -7,7 +7,6 @@ const usePerfumes = () => {
         fetch('http://localhost:5000/perfume')
             .then(res => res.json())
             .then(data => {
-
                 setPerfumes(data);
             })
     },[])

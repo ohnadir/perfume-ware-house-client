@@ -1,9 +1,10 @@
 import React from 'react';
-import { Link,  useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const HomeInventory = ({perfume}) => {
-    const { name, img, price, stock } = perfume;
-    const { id } = useParams();
+    const { name, img, price, stock, _id } = perfume;
+    // const { id } = useParams();
+    
     return (
         <div>
             <div className='shadow-xl w-[296px] mx-auto p-2 text-center'>
@@ -11,7 +12,7 @@ const HomeInventory = ({perfume}) => {
                 <p>{name}</p>
                 <p>Price:- ${price}</p>
                 <p>Stock:- {stock}</p>
-                <Link to={`/inventory/${id}`}>
+                <Link to={`/inventory/${_id}`}>
                 <button className='bg-cyan-600 px-16 text-white py-[4px] my-2'>Update</button>
                 </Link>
             </div>

@@ -11,6 +11,7 @@ import AddItems from './Component/AddItems/AddItems';
 import MyItems from './Component/MyItems/MyItems';
 import Blogs from './Component/Blogs/Blogs';
 import RequireAuth from './Component/RequireAuth/RequireAuth';
+import Inventory from './Component/Inventory/Inventory';
 
 function App() {
   return (
@@ -19,10 +20,10 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
-        <Route path='/inventory' element={<Inventories></Inventories>}></Route>
-        {/* <Route path='/inventory/:id' element={
+        <Route path='/inventories' element={<Inventories></Inventories>}></Route>
+        <Route path='/inventory/:id' element={
           <RequireAuth><Inventory></Inventory></RequireAuth>
-        }></Route> */}
+        }></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>

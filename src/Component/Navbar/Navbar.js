@@ -5,8 +5,10 @@ import {faBars, faTimes,} from "@fortawesome/free-solid-svg-icons"
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { signOut } from 'firebase/auth';
 import auth from '../firebase.init';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
+    const navigate = useNavigate();
     const [open, setOpen] = useState(false);
     const [user] = useAuthState(auth);
     const handleLogout = () => {
@@ -15,10 +17,10 @@ const Navbar = () => {
     return (
         <div className='flex items-center h-14 px-6 justify-between bg-slate-600 text-white  relative z-50'>
             <div>
-                <span>Perfume wareHouse</span>
+                <span className='cursor-pointer' onClick={()=>navigate('/home')}>Perfume wareHouse</span>
             </div>
             <div className='flex gap-6 items-center hidden md:flex'>
-                <CustomLink to='/home'>Home</CustomLink>
+                <CustomLink to='/inventories'>Inventories</CustomLink>
                 <CustomLink to='/blogs'>Blogs</CustomLink>
 
                 {user && <>

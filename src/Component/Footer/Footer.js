@@ -8,9 +8,9 @@ import { AiOutlineGoogle } from 'react-icons/ai';
 const Footer = () => {
     return (
         <div>
-            <footer class="text-center bg-gray-900 text-white">
-                <div class="px-6 pt-6">
-                    <div class="flex justify-center mx-auto my-8 gap-8 text-2xl items-center text-center">
+            <footer className="text-center bg-gray-900 text-white">
+                <div className="px-6 pt-6">
+                    <div className="flex justify-center mx-auto my-8 gap-8 text-2xl items-center text-center">
                         <FaFacebookF className='cursor-pointer'  />
                         <AiFillGithub className='cursor-pointer'  />
                         <AiOutlineGoogle className='cursor-pointer'  />
@@ -19,7 +19,7 @@ const Footer = () => {
                         <AiOutlineTwitter className='cursor-pointer' />
                     </div>
                 </div>
-                <div class="text-center p-4">
+                <div className="text-center p-4">
                     © 2022 Copyright: Perfume wareHouse
                 </div>
             </footer>

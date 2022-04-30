@@ -9,7 +9,7 @@ const Home = () => {
     const [perfumes] = usePerfumes();
     const navigate = useNavigate();
     const handleManageInventories = () => {
-        navigate('/inventory');
+        navigate('/inventories');
     }
     return (
         <div>
