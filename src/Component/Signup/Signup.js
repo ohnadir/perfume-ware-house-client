@@ -4,23 +4,23 @@ import { FcGoogle } from 'react-icons/fc';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../firebase.init'
-import { useSendEmailVerification } from 'react-firebase-hooks/auth';
+// import { useSendEmailVerification } from 'react-firebase-hooks/auth';
 import Spinner from '../Spinner/Spinner';
-import { async } from '@firebase/util';
 import { toast } from 'react-toastify';
 
 const Signup = () => {
+    const [agree, setAgree] = useState(false);
     const [email, setEmail] = useState({value: "", error:""});
     const [password, setPassword] = useState({value: "", error:""});
     const [confirmationPassword, setConfirmationPassword] = useState({value: "", error:""});
     const [createUserWithEmailAndPassword, user] = useCreateUserWithEmailAndPassword(auth);
     const [signInWithGoogle, user1] = useSignInWithGoogle(auth);
     const navigate = useNavigate();
-    const [sendEmailVerification, sending] = useSendEmailVerification(auth);
+    // const [sendEmailVerification, sending] = useSendEmailVerification(auth);
 
-    if (sending) {
+    /* if (sending) {
         <Spinner></Spinner>
-    }
+    } */
     if (user) {
         navigate('/home');
     }
@@ -53,13 +53,9 @@ const Signup = () => {
             setConfirmationPassword({value:confirmPasswordInput, error:""})
         }
     }
-    const handleEmailVerification = async () => {
-        await sendEmailVerification();
-        toast('Send Email Verification');
-    }
+
     const handleSubmit =() => {
         createUserWithEmailAndPassword(email.value, password.value);
-        handleEmailVerification();
     }
     const handleGoogleSignIn = () => {
         signInWithGoogle();
@@ -88,8 +84,11 @@ const Signup = () => {
                                 <p className='text-red-600 text-sm'>{confirmationPassword.error}</p>
                             )}
                         </div>
-                        
-                        <button onClick={handleSubmit}  className='w-full bg-cyan-600 py-2 text-white' type='submit'>Signup</button>
+                        <div className='mb-2'>
+                            <input onClick={()=>setAgree(!agree)} type="checkbox" name="terms" id="terms" />
+                            <label className={agree ? "px-2 text-blue-600" : "px-2 text-red-700"} htmlFor="terms">Accept Car service terms and Conditions</label>
+                        </div>
+                        <button disabled={!agree} onClick={handleSubmit}  className='w-full bg-cyan-600 py-2 text-white' type='submit'>Signup</button>
                         <p className='text-sm text-right'>Already have an Account ? <span><Link className='text-cyan-600' to='/login'>Login</Link></span></p>
                         <div className='my-8 flex justify-between items-center'>
                             <span className='w-[186px]'><hr /></span>
