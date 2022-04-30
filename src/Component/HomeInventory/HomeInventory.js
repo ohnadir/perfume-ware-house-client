@@ -2,16 +2,25 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const HomeInventory = ({perfume}) => {
-    const { name, img, price, stock, _id } = perfume;
+    const { name, img, price, stock, _id, details, Seller } = perfume;
+
+    let newDetails;
+    if (details > 300) {
+        newDetails = details.slice(0, 100) + "...";
+    }
     return (
         <div>
-            <div className='shadow-xl w-[296px] mx-auto p-2 text-center'>
+            <div className=' w-[296px] mx-auto p-2 '>
                 <img className='mx-auto' src={img} alt="" />
-                <p>{name}</p>
-                <p>Price:- ${price}</p>
-                <p>Stock:- {stock}</p>
+                <p className='text-lg mb-1'>{name}</p>
+                <p>Price:- <span className='font-bold text-lg mb-1' >${price}</span></p>
+                <p className='mb-3'>Stock:- {stock}</p>
+                <p className=''>{details}</p>
+                <p>Seller:- {Seller}</p>
                 <Link to={`/inventory/${_id}`}>
-                <button className='bg-cyan-600 px-16 text-white py-[4px] my-2'>Update</button>
+                <div className=''>
+                    <button className='bg-cyan-600 w-full px-16 text-white py-[4px] my-2'>Update</button>
+                </div>
                 </Link>
             </div>
         </div>

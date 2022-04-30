@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const Inventory = () => {
     const { id } = useParams();
     const [product, setProduct] = useState({});
     const [number, setNumber] = useState('');
     const { name, img, price, stock } = product;
+    const navigate = useNavigate();
+    const handleManageInventories = () => {
+        navigate('/inventories');
+    }
     useEffect(() => {
         const url = `http://localhost:5000/perfume/${id}`
         fetch(url)
@@ -57,8 +61,8 @@ const Inventory = () => {
         });
     }
     return (
-        <div>
-            <div className='flex justify-center items-center py-20'>
+        <div className='py-20'>
+            <div className='flex justify-center items-center '>
                 <div className='text-center w-[300px] border p-2'>
                     <img className='w-[200px] mx-auto' src={img} alt="" />
                     <p>{name}</p>
@@ -76,6 +80,12 @@ const Inventory = () => {
                         </form>
                     </div>
                 </div>
+            </div>
+            <div className='flex justify-center mt-6'>
+                <button onClick={handleManageInventories} type="button" data-mdb-ripple="true" data-mdb-ripple-color="light"
+                    className="inline-block px-2 py-2 bg-blue-600 text-white font-medium text-xs leading-tight uppercase  shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+                    >Manage Inventory
+                </button>
             </div>
         </div>
     );

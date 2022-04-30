@@ -2,7 +2,7 @@ import React from 'react';
 import AllInventories from '../AllInventories/AllInventories';
 import usePerfumes from '../Hooks/usePerfumes';
 
-const Inventories = () => {
+const ManageInventory = () => {
     const [perfumes] = usePerfumes();
     return (
         <div>
@@ -20,4 +20,4 @@ const Inventories = () => {
     );
 };
 
-export default Inventories;
+export default ManageInventory;

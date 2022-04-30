@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Navbar from './Component/Navbar/Navbar';
 import Home from './Component/Home/Home'
-import Inventories from './Component/Inventories/Inventories'
+import ManageInventory from './Component/ManageInventory/ManageInventory'
 import Login from './Component/Login/Login'
 import Signup from './Component/Signup/Signup'
 import Footer from './Component/Footer/Footer';
@@ -21,7 +21,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
-        <Route path='/inventories' element={<Inventories></Inventories>}></Route>
+        <Route path='/inventories' element={<ManageInventory></ManageInventory>}></Route>
         <Route path='/inventory/:id' element={
           <RequireAuth><Inventory></Inventory></RequireAuth>
         }></Route>
