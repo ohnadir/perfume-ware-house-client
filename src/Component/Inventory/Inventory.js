@@ -13,7 +13,7 @@ const Inventory = () => {
             .then(data => {
                 setProduct(data)
             })
-    }, []);
+    }, [id]);
     const handleNumber = (event) => {
         setNumber(event.target.value);
     }

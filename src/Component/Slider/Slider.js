@@ -1,5 +1,8 @@
 import React from 'react';
 import photo from '../../images/404-error-page-not-found.jpg'
+import pic1 from '../../images/pic1.jpg'
+import pic2 from '../../images/pic2.jpg'
+import pic3 from '../../images/pic3.jpg'
 
 const Slider = () => {
     return (
@@ -12,24 +15,24 @@ const Slider = () => {
             </div>
             <div className="carousel-inner relative w-full overflow-hidden">
                 <div className="carousel-item active relative float-left w-full">
-                    <img src={photo} className="block w-full h-[500px]" alt="..."/>
+                    <img src={pic1} className="block w-full h-[500px]" alt="..."/>
                     <div className="carousel-caption hidden md:block absolute text-center">
-                        <h5 className="text-xl">First slide label</h5>
-                        <p>Some representative placeholder content for the first slide.</p>
+                        <h5 className="text-2xl text-black">First slide label</h5>
+                        <p className="text-xl text-black">Some representative placeholder content for the first slide.</p>
                     </div>
                 </div>
                 <div className="carousel-item relative float-left w-full">
-                    <img src={photo} className="block w-full h-[500px]" alt="..."/>
+                    <img src={pic2} className="block w-full h-[500px]" alt="..."/>
                     <div className="carousel-caption hidden md:block absolute text-center">
-                        <h5 className="text-xl">Second slide label</h5>
-                        <p>Some representative placeholder content for the second slide.</p>
+                        <h5 className="text-2xl text-black">Second slide label</h5>
+                        <p className='text-black text-xl'>Some representative placeholder content for the second slide.</p>
                     </div>
                 </div>
                 <div className="carousel-item relative float-left w-full">
-                    <img src={photo} className="block w-full h-[500px]" alt="..."/>
+                    <img src={pic3} className="block w-full h-[500px]" alt="..."/>
                     <div className="carousel-caption hidden md:block absolute text-center">
-                        <h5 className="text-xl">Third slide label</h5>
-                        <p>Some representative placeholder content for the third slide.</p>
+                        <h5 className="text-2xl text-black">Third slide label</h5>
+                        <p className="text-xl text-black">Some representative placeholder content for the third slide.</p>
                     </div>
                 </div>
             </div>

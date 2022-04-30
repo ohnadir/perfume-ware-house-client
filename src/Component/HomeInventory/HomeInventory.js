@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 
 const HomeInventory = ({perfume}) => {
     const { name, img, price, stock, _id } = perfume;
-    // const { id } = useParams();
-    
     return (
         <div>
             <div className='shadow-xl w-[296px] mx-auto p-2 text-center'>
