@@ -1,5 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import Navbar from './Component/Navbar/Navbar';
 import Home from './Component/Home/Home'
 import ManageInventory from './Component/ManageInventory/ManageInventory'
@@ -31,9 +34,11 @@ function App() {
         <Route path='/manageitems' element={<ManageItems></ManageItems>}></Route>
         <Route path='/additems' element={<AddItems></AddItems>}></Route>
         <Route path='/myitems' element={<MyItems></MyItems>}></Route>
+        
         <Route path='*' element={<NotFoundPage></NotFoundPage>}></Route>
       </Routes>
       <Footer></Footer>
+      <ToastContainer />
     </div>
   );
 }

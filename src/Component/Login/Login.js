@@ -4,6 +4,8 @@ import { FcGoogle } from 'react-icons/fc';
 import auth from '../firebase.init';
 import { useAuthState, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
+import { toast } from 'react-toastify';
 
 const Login = () => {
     const [user] = useAuthState(auth);
@@ -13,6 +15,7 @@ const Login = () => {
     let location = useLocation();
     const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
     const [signInWithGoogle, user1] = useSignInWithGoogle(auth);
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
     let from = location.state?.from?.pathname || "/";
     if (user) {
@@ -57,6 +60,11 @@ const Login = () => {
     const handleGoogleSignIn = () => {
         signInWithGoogle();
     }
+
+    const handleForttenPassword = async () => {
+        await sendPasswordResetEmail(email);
+        toast('Send email for Forgotten Password ')
+    }
     return (
         <div>
             <div className='flex justify-center items-center h-[92vh]'>
@@ -70,7 +78,12 @@ const Login = () => {
                             <input onChange={handlePassword} className='w-full px-2 py-[5px] bg-gray-100 border-0' placeholder='Password' type="password" name="" id="" />
                         </div>
                         <button onClick={handleLogin} className='w-full bg-cyan-600 py-2 text-white' type='submit'>Login</button>
-                        <p className='text-sm text-right'>Create an Account ! <span><Link className='text-cyan-600' to='/signup'>Sign up</Link></span></p>
+
+                        <div className='flex justify-between justify-center mt-2'>
+                            <p className='text-sm '>Create an Account ! <span><Link className='text-cyan-600' to='/signup'>Sign up</Link></span></p>
+                            <button onClick={handleForttenPassword} className='text-red-600 text-sm '>Forgotten Password?</button>
+                        </div>
+                        
                         <div className='my-8 flex justify-between items-center'>
                             <span className='w-[186px]'><hr /></span>
                             <span className='text-slate-400'>or</span>
