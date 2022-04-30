@@ -4,6 +4,10 @@ import { FcGoogle } from 'react-icons/fc';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../firebase.init'
+import { useSendEmailVerification } from 'react-firebase-hooks/auth';
+import Spinner from '../Spinner/Spinner';
+import { async } from '@firebase/util';
+import { toast } from 'react-toastify';
 
 const Signup = () => {
     const [email, setEmail] = useState({value: "", error:""});
@@ -12,8 +16,11 @@ const Signup = () => {
     const [createUserWithEmailAndPassword, user] = useCreateUserWithEmailAndPassword(auth);
     const [signInWithGoogle, user1] = useSignInWithGoogle(auth);
     const navigate = useNavigate();
+    const [sendEmailVerification, sending] = useSendEmailVerification(auth);
 
-
+    if (sending) {
+        <Spinner></Spinner>
+    }
     if (user) {
         navigate('/home');
     }
@@ -46,9 +53,13 @@ const Signup = () => {
             setConfirmationPassword({value:confirmPasswordInput, error:""})
         }
     }
-
-    const handleSubmit = () => {
+    const handleEmailVerification = async () => {
+        await sendEmailVerification();
+        toast('Send Email Verification');
+    }
+    const handleSubmit =() => {
         createUserWithEmailAndPassword(email.value, password.value);
+        handleEmailVerification();
     }
     const handleGoogleSignIn = () => {
         signInWithGoogle();
