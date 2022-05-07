@@ -68,7 +68,7 @@ const Login = () => {
     return (
         <div>
             <div className='flex justify-center items-center h-[92vh]'>
-                <div className='w-[500px] shadow-xl p-4 '>
+                <div className='w-[250px] sm:w-[500px] shadow-xl p-4 '>
                     <form onSubmit={(e)=>e.preventDefault()}>
                         <h1 className='text-center text-xl mb-8 text-slate-400'>Log In</h1>
                         <div className='mb-8'>
@@ -80,7 +80,7 @@ const Login = () => {
 
                         <button onClick={handleLogin} className='w-full bg-cyan-600 py-2 text-white' type='submit'>Login</button>
 
-                        <div className='flex justify-between items-center mt-2'>
+                        <div className='flex flex-col sm:flex-row justify-between items-center mt-2'>
                             <p className='text-sm '>Create an Account ! <span><Link className='text-cyan-600' to='/signup'>Sign up</Link></span></p>
                             <button onClick={handleForgottenPassword} className='text-red-600 text-sm '>Forgotten Password?</button>
                         </div>
@@ -90,7 +90,7 @@ const Login = () => {
                             <span className='text-slate-400'>or</span>
                             <span className='w-[186px]'><hr /></span>
                         </div>
-                        <button onClick={handleGoogleSignIn} className='border w-full flex items-center justify-around p-1'><FcGoogle className='text-4xl' /><span className='text-lg'>Continue with google</span></button>
+                        <button onClick={handleGoogleSignIn} className='border rounded text-cyan-600 border-cyan-600 w-full flex items-center justify-around p-1'><FcGoogle className='text-4xl' /><span className='text-lg'>Continue with google</span></button>
                     </form>
                 </div>
             </div>

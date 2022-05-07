@@ -21,7 +21,7 @@ const AllInventories = ({perfume}) => {
     }
 
     return (
-            <div className='w-[450px] mx-auto border mb-4'>
+            <div className='w-[280px] sm:w-[450px]  mx-auto border mb-4'>
                 <div className='flex items-center gap-8 p-2 relative'>
                     <img className='w-[50px]' src={img} alt="" />
                     <div className='flex  items-center '>

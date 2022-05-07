@@ -5,7 +5,7 @@ const Inventory = () => {
     const { id } = useParams();
     const [product, setProduct] = useState({});
     const [number, setNumber] = useState('');
-    const { name, img, price, stock } = product;
+    const { name, img, price, stock, _id } = product;
     const navigate = useNavigate();
     const handleManageInventories = () => {
         navigate('/inventories');
@@ -66,10 +66,11 @@ const Inventory = () => {
                 <div className='w-[250px] sm:w-[500px] mx-auto shadow-xl p-2 sm:flex  justify-center items-center'>
                     <img className='w-[200px]' src={img} alt="" />
                     <div className='mx-auto'>
+                        <p>id:- {_id}</p>
                         <p>{name}</p>
                         <p>Price:- <span className='font-bold text-lg'>${price}</span></p>
                         <p>Stock:- {stock}</p>
-                        <button onClick={()=>handleDelivered(stock)} className='bg-cyan-600 text-white px-1 py-[3px] rounded'>Delivered</button>
+                        <button  onClick={()=>handleDelivered(stock)} className='bg-cyan-600 text-white mt-2 px-1 py-[3px] rounded'>Delivered</button>
                         <div className='my-4'>
                             <form onSubmit={(e)=>e.preventDefault()}>
                                 <div className='flex mx-auto'>

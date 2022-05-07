@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../firebase.init';
+import MyItemsDetails from '../MyItemsDetails/MyItemsDetails';
 
 const MyItems = () => {
     const [user] = useAuthState(auth);
@@ -18,7 +19,14 @@ const MyItems = () => {
     }, [user]);
     return (
         <div>
-            <h2>This is My Items{products.length}</h2>
+            <div className='my-16'>
+                {
+                    products.map(details => <MyItemsDetails
+                        key={details._id}
+                        details={details}
+                    ></MyItemsDetails>)
+                }
+            </div>
         </div>
     );
 };

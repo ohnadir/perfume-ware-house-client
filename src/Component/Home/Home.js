@@ -37,7 +37,7 @@ const Home = () => {
                             }
                         </div>
                         <div className='flex justify-center mt-10'>
-                            <button onClick={handleManageInventories} className='bg-red-600 text-white px-2 py-[4px]'>Manage Inventories</button>
+                            <button onClick={handleManageInventories} className='border-2 text-cyan-600 border-cyan-600 rounded-full text-b px-3 py-[5px]'>Manage Inventories</button>
                         </div>
                    </div>
                 </div>
@@ -87,7 +87,7 @@ const Home = () => {
                 <div className='bg-[#e5eff4] p-16 flex justify-center items-center text-center'>
                     <div>
                         <p className='mb-2 text-sm'>We'd love to hear what you think!</p>
-                        <button className='rounded-full border border-slate-900 px-4 py-1'>Give feedback</button>
+                        <button className='rounded-full border border-slate-900 px-4 py-1 hover:border-2'>Give feedback</button>
                     </div>
                 </div>
             </div>

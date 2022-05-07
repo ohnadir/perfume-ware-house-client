@@ -4,7 +4,7 @@ import auth from '../firebase.init';
 
 const AddItems = () => {
     const [user] = useAuthState(auth);
-    const email = user.email;
+    const email = user?.email;
     const [name, setName] = useState('')
     // const [email, setEmail] = useState('')
     const [price, setPrice] = useState('')
@@ -48,15 +48,16 @@ const AddItems = () => {
     
     return (
         <div>
-            <h2>This is Items </h2>
-            <div className='w-[450px] mx-auto border p-4'>
+            <div className='w-[450px] mx-auto border p-4 my-16'>
                 <form >
                     <input onChange={handleName} className='w-full mb-8 bg-slate-100 px-1 py-[4px]'  type="text" name="name" id="" placeholder='Name' />
                     {/* <input onChange={handleEmail} className='w-full mb-8 bg-slate-100 px-1 py-[4px]'  type="text" name="email" id="" placeholder='Email' /> */}
                     <input onChange={handlePrice} className='w-full mb-8 bg-slate-100 px-1 py-[4px]' type="number" name="price" placeholder='Price' id="" />
                     <input onChange={handleStock} className='w-full mb-8 bg-slate-100 px-1 py-[4px]'  type="number" name="stock" placeholder='Stock'  id=""  />
                     <input onChange={handleImg} className='w-full mb-8 bg-slate-100 px-1 py-[4px]'  type="text" name="Img" placeholder='Img URL'  id=""  />
-                    <button onClick={handleSubmit} className='bg-cyan-600' >Upload</button>
+                    <div className='flex justify-center'>
+                        <button onClick={handleSubmit} className='bg-cyan-600 px-10 rounded py-1 text-white' >Upload</button>
+                    </div>
                 </form>
             </div>
         </div>
