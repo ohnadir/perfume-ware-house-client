@@ -63,22 +63,25 @@ const Inventory = () => {
     return (
         <div className='py-20'>
             <div className='flex justify-center items-center '>
-                <div className='text-center w-[300px] border p-2'>
-                    <img className='w-[200px] mx-auto' src={img} alt="" />
-                    <p>{name}</p>
-                    <p>Price:- <span className='font-bold text-lg'>${price}</span></p>
-                    <p>Stock:- {stock}</p>
-                    <button onClick={()=>handleDelivered(stock)} className='bg-cyan-600 text-white px-1 py-[3px] rounded'>Delivered</button>
-                    <div className='my-4'>
-                        <form onSubmit={(e)=>e.preventDefault()}>
-                            <div className='flex mx-auto'>
-                                <input onChange={handleNumber} className='px-2 py-2 bg-slate-100 outline-none' type="number" name="number" id="" placeholder='Enter Amount' />
-                                <button onClick={()=>handleRestock(stock)} type="button" data-mdb-ripple="true" data-mdb-ripple-color="light"
-                                    className="inline-block px-2 py-2 bg-blue-600 text-white font-medium text-xs leading-tight uppercase  shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
-                                >Restock</button>
-                            </div>
-                        </form>
+                <div className='w-[250px] sm:w-[500px] mx-auto shadow-xl p-2 sm:flex  justify-center items-center'>
+                    <img className='w-[200px]' src={img} alt="" />
+                    <div className='mx-auto'>
+                        <p>{name}</p>
+                        <p>Price:- <span className='font-bold text-lg'>${price}</span></p>
+                        <p>Stock:- {stock}</p>
+                        <button onClick={()=>handleDelivered(stock)} className='bg-cyan-600 text-white px-1 py-[3px] rounded'>Delivered</button>
+                        <div className='my-4'>
+                            <form onSubmit={(e)=>e.preventDefault()}>
+                                <div className='flex mx-auto'>
+                                    <input onChange={handleNumber} className='w-[150px] px-2 py-2 bg-slate-100 outline-none' type="number" name="number" id="" placeholder='Enter Amount' />
+                                    <button onClick={()=>handleRestock(stock)} type="button" data-mdb-ripple="true" data-mdb-ripple-color="light"
+                                        className="inline-block px-2 py-2 bg-blue-600 text-white font-medium text-xs leading-tight uppercase  shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+                                    >Restock</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
+                   
                 </div>
             </div>
             <div className='flex justify-center mt-6'>

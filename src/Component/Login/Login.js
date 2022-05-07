@@ -61,7 +61,7 @@ const Login = () => {
         signInWithGoogle();
     }
 
-    const handleForttenPassword = async () => {
+    const handleForgottenPassword = async () => {
         await sendPasswordResetEmail(email);
         toast('Send email for Forgotten Password ')
     }
@@ -80,9 +80,9 @@ const Login = () => {
 
                         <button onClick={handleLogin} className='w-full bg-cyan-600 py-2 text-white' type='submit'>Login</button>
 
-                        <div className='flex justify-between justify-center mt-2'>
+                        <div className='flex justify-between items-center mt-2'>
                             <p className='text-sm '>Create an Account ! <span><Link className='text-cyan-600' to='/signup'>Sign up</Link></span></p>
-                            <button onClick={handleForttenPassword} className='text-red-600 text-sm '>Forgotten Password?</button>
+                            <button onClick={handleForgottenPassword} className='text-red-600 text-sm '>Forgotten Password?</button>
                         </div>
                         
                         <div className='my-8 flex justify-between items-center'>

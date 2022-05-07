@@ -4,6 +4,7 @@ import HomeInventory from '../HomeInventory/HomeInventory';
 import usePerfumes from '../Hooks/usePerfumes';
 import Review from '../Review/Review';
 import Slider from '../Slider/Slider';
+import Testimonial from '../Testimonial/Testimonial';
 
 const Home = () => {
     const [perfumes] = usePerfumes();
@@ -34,10 +35,11 @@ const Home = () => {
                    </div>
                 </div>
             </div>
-            {/* Customer review */}
-            <div className='mb-16'>
-                <div className='container mx-auto'>
-                    <Review></Review>
+            
+            {/* Testimonial */}
+            <div>
+                <div className='bg-[#e5eff4]'>
+                        <Testimonial></Testimonial>
                 </div>
             </div>
         </div>

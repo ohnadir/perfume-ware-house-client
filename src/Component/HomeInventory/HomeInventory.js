@@ -3,11 +3,6 @@ import { Link } from 'react-router-dom';
 
 const HomeInventory = ({perfume}) => {
     const { name, img, price, stock, _id, details, Seller } = perfume;
-
-    let newDetails;
-    if (details > 300) {
-        newDetails = details.slice(0, 100) + "...";
-    }
     return (
         <div>
             <div className=' w-[296px] mx-auto p-2 '>
@@ -15,7 +10,7 @@ const HomeInventory = ({perfume}) => {
                 <p className='text-lg mb-1'>{name}</p>
                 <p>Price:- <span className='font-bold text-lg mb-1' >${price}</span></p>
                 <p className='mb-3'>Stock:- {stock}</p>
-                <p className=''>{details}</p>
+                <p className='mb-3'>{details.slice(0,100)+"..."}</p>
                 <p>Seller:- {Seller}</p>
                 <Link to={`/inventory/${_id}`}>
                 <div className=''>
