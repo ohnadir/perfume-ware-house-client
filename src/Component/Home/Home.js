@@ -2,9 +2,16 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import HomeInventory from '../HomeInventory/HomeInventory';
 import usePerfumes from '../Hooks/usePerfumes';
-import Review from '../Review/Review';
 import Slider from '../Slider/Slider';
 import Testimonial from '../Testimonial/Testimonial';
+import Brand1 from '../../images/brand1.jpg'
+import Brand2 from '../../images/brand2.jpg'
+import Brand3 from '../../images/brand3.jpg'
+import Brand4 from '../../images/brand4.jpg'
+import Brand5 from '../../images/brand5.jpg'
+import Brand6 from '../../images/brand6.jpg'
+
+
 
 const Home = () => {
     const [perfumes] = usePerfumes();
@@ -40,6 +47,39 @@ const Home = () => {
             <div>
                 <div className='bg-[#e5eff4]'>
                         <Testimonial></Testimonial>
+                </div>
+            </div>
+            {/* Top Brand */}
+            <div>
+                <div className='max-w-7xl mx-auto p-16'>
+                    <h1 className='text-3xl text-center'>Top Brands</h1>
+                    <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6'>
+                        <div className='mx-auto mb-6'>
+                            <img className=' w-[80px]' src={Brand1} alt="" />
+                            <p className='text-center'>Dossier</p>
+                        </div>
+                        <div className='mx-auto mb-6'>
+                            <img className='w-[80px]' src={Brand2} alt="" />
+                            <p className='text-center'>Marc Jacobs</p>
+                        </div>
+                        <div className='mx-auto'>
+                            <img className=' w-[80px]' src={Brand3} alt="" />
+                            <p className='text-center'>Burberry</p>
+                        </div>
+                        <div className='mx-auto mb-6'>
+                            <img className='mx-auto w-[80px]' src={Brand4} alt="" />
+                            <p className='text-center'>Arianna Grande</p>
+                        </div>
+                        <div className='mx-auto mb-6'>
+                            <img className='mx-auto w-[80px]' src={Brand5} alt="" />
+                            <p className='text-center'>Versace</p>
+                        </div>
+                        <div className='mx-auto'>
+                            <img className='mx-auto w-[80px]' src={Brand6} alt="" />
+                            <p className='text-center'>Juicy Couture</p>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </div>
