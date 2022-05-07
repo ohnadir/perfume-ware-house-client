@@ -52,7 +52,7 @@ const Home = () => {
             {/* Top Brand */}
             <div>
                 <div className='max-w-7xl mx-auto p-16'>
-                    <h1 className='text-3xl text-center'>Top Brands</h1>
+                    <h1 className='text-3xl text-center mb-8'>Top Brands</h1>
                     <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6'>
                         <div className='mx-auto mb-6'>
                             <img className=' w-[80px]' src={Brand1} alt="" />
@@ -80,6 +80,15 @@ const Home = () => {
                         </div>
                     </div>
                     
+                </div>
+            </div>
+            {/* Feedback section */}
+            <div>
+                <div className='bg-[#e5eff4] p-16 flex justify-center items-center text-center'>
+                    <div>
+                        <p className='mb-2 text-sm'>We'd love to hear what you think!</p>
+                        <button className='rounded-full border border-slate-900 px-4 py-1'>Give feedback</button>
+                    </div>
                 </div>
             </div>
         </div>
