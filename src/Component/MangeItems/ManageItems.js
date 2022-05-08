@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const ManageItems = () => {
+
     return (
-        <div>
-            <h2>This is ManageItems</h2>
-        </div>
-    );
+        <div></div>
+    )
 };
 
 export default ManageItems;

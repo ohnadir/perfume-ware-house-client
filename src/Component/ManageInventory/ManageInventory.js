@@ -26,7 +26,6 @@ const ManageInventory = () => {
         setImg(event.target.value)
     }
     const handleSubmit = (event) => {
-
         const url = 'https://ancient-bayou-60727.herokuapp.com/upload';
         fetch(url, {
         method: 'POST',
@@ -48,6 +47,7 @@ const ManageInventory = () => {
             <div>
                 <div>
                     <div className='w-[250px] sm:w-[450px] mx-auto border p-4 my-16'>
+                        <h1 className='text-center mb-4'>Add new Item</h1>
                         <form onSubmit={e=> e.preventDefault()}>
                             <input onChange={handleName} className='w-full mb-8 bg-slate-100 px-1 py-[4px]'  type="text" name="name" id="" placeholder='Name' />
                             <input onChange={handlePrice} className='w-full mb-8 bg-slate-100 px-1 py-[4px]' type="number" name="price" placeholder='Price' id="" />
