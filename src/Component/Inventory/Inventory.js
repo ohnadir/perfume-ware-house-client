@@ -5,13 +5,14 @@ const Inventory = () => {
     const { id } = useParams();
     const [product, setProduct] = useState({});
     const [number, setNumber] = useState('');
+    const [reduce, setReduce] = useState(0);
     const { name, img, price, stock, _id } = product;
     const navigate = useNavigate();
     const handleManageInventories = () => {
         navigate('/inventories');
     }
     useEffect(() => {
-        const url = `http://localhost:5000/perfume/${id}`
+        const url = `https://ancient-bayou-60727.herokuapp.com/perfume/${id}`
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -22,15 +23,16 @@ const Inventory = () => {
         setNumber(event.target.value);
     }
 
-    let count = parseInt(stock);
-    // function for reduce number 
-    const updateStock = () => {
-        return count--;
+    
+    const updateStock = (stock) => {
+        const currentValue = parseInt(stock);
+        const newValue = currentValue - 1
+        return newValue;
     }
  
     const handleDelivered = (newStock) => {
-        const stock = updateStock();
-        const url = `http://localhost:5000/perfume/${id}`;
+        const stock = updateStock(newStock);
+        const url = `https://ancient-bayou-60727.herokuapp.com/perfume/${id}`;
         fetch(url, {
             method: 'PUT',
             body: JSON.stringify({stock:stock}),
@@ -41,13 +43,14 @@ const Inventory = () => {
         .then(res=> res.json())
             .then(data => {
                 console.log(data)
+                window.location.reload();
             });
     }
 
     const handleRestock = (stocks) => {
         let count = parseInt(stocks);
         const stock = parseInt(number) + count;
-        const url = `http://localhost:5000/perfume/${id}`;
+        const url = `https://ancient-bayou-60727.herokuapp.com/perfume/${id}`;
         fetch(url, {
             method: 'PUT',
             body: JSON.stringify({stock:stock}),
@@ -57,7 +60,8 @@ const Inventory = () => {
             })
         .then(res=> res.json())
         .then(data => {
-             console.log(data)
+            console.log(data)
+            window.location.reload();
         });
     }
     return (

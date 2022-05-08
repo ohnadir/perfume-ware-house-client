@@ -8,7 +8,6 @@ import Home from './Component/Home/Home'
 import ManageInventory from './Component/ManageInventory/ManageInventory'
 import Login from './Component/Login/Login'
 import Signup from './Component/Signup/Signup'
-import Footer from './Component/Footer/Footer';
 import ManageItems from './Component/MangeItems/ManageItems';
 import AddItems from './Component/AddItems/AddItems';
 import MyItems from './Component/MyItems/MyItems';
@@ -37,7 +36,6 @@ function App() {
         
         <Route path='*' element={<NotFoundPage></NotFoundPage>}></Route>
       </Routes>
-      <Footer></Footer>
       <ToastContainer />
     </div>
   );

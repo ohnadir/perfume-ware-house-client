@@ -1,11 +1,8 @@
 import React from 'react';
 import { BsTrash } from 'react-icons/bs';
 
-const MyItemsDetails = ({ details }) => {
+const MyItemsDetails = ({ details, handleDeleteItem }) => {
     const {img, name, price, stock, _id } = details;
-    const handleDeleteItem = () => {
-        
-    }
     return (
         <div>
             <div className="w-[280px] sm:w-[450px] mx-auto border mb-4">

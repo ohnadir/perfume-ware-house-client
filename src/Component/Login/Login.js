@@ -18,8 +18,12 @@ const Login = () => {
     const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
 
     let from = location.state?.from?.pathname || "/";
+    let errorItem;
+    if (error) {
+        errorItem = <p className='text-red-600'>Error: {error?.message}</p>
+    }
     if (user) {
-        const url = 'http://localhost:5000/login';
+        const url = 'https://ancient-bayou-60727.herokuapp.com/login';
         fetch(url, {
         method: 'POST',
         body: JSON.stringify({
@@ -30,11 +34,11 @@ const Login = () => {
         },
     })
     .then((response) => response.json())
-            .then((data) => {
-                console.log(data)
-                localStorage.setItem('accessToken', data.token)
-                navigate(from, { replace: true });
-            });
+    .then((data) => {
+        console.log(data)
+        localStorage.setItem('accessToken', data.token)
+        navigate(from, { replace: true });
+    });
         
     } 
 
@@ -77,7 +81,7 @@ const Login = () => {
                         <div className='mb-8'>
                             <input onChange={handlePassword} className='w-full px-2 py-[5px] bg-gray-100 border-0' placeholder='Password' type="password" name="" id="" />
                         </div>
-
+                        {errorItem}
                         <button onClick={handleLogin} className='w-full bg-cyan-600 py-2 text-white' type='submit'>Login</button>
 
                         <div className='flex flex-col sm:flex-row justify-between items-center mt-2'>

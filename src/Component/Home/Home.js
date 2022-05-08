@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import HomeInventory from '../HomeInventory/HomeInventory';
+import Footer from '../Footer/Footer';
 import usePerfumes from '../Hooks/usePerfumes';
 import Slider from '../Slider/Slider';
 import Testimonial from '../Testimonial/Testimonial';
@@ -91,6 +92,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+            <Footer></Footer>
         </div>
     );
 };

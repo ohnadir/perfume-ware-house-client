@@ -16,22 +16,24 @@ const Slider = () => {
                 <div className="carousel-item active relative float-left w-full">
                     <img src={pic1} className="block w-full h-[500px]" alt="..."/>
                     <div className="carousel-caption hidden md:block absolute text-center">
-                        <h5 className="text-2xl text-black">First slide label</h5>
-                        <p className="text-xl text-black">Some representative placeholder content for the first slide.</p>
+                        <h5 className="text-xl text-black">Chanel No.5 L'Eau Eau De Toilette Spray</h5>
+                        <p className="text-lg text-black">Product Description Let the  100% original Women's Perfume NÂº5 L'eau Chanel EDT  surprise you and boost your femininity using this exclusive  women's perfume  with a unique, personal scent.</p>
                     </div>
                 </div>
                 <div className="carousel-item relative float-left w-full">
                     <img src={pic2} className="block w-full h-[500px]" alt="..."/>
                     <div className="carousel-caption hidden md:block absolute text-center">
-                        <h5 className="text-2xl text-black">Second slide label</h5>
-                        <p className='text-black text-xl'>Some representative placeholder content for the second slide.</p>
+                        <h5 className="text-xl text-black">Versace Eros Eau De Toilette</h5>
+                        <p className='text-black text-lg'>You'd expect nothing less than a manly fragrance from the design house of Versace, and you'll get it with Versace Eros, a decadent fragrance for men of distinction.</p>
                     </div>
                 </div>
                 <div className="carousel-item relative float-left w-full">
                     <img src={pic3} className="block w-full h-[500px]" alt="..."/>
                     <div className="carousel-caption hidden md:block absolute text-center">
-                        <h5 className="text-2xl text-black">Third slide label</h5>
-                        <p className="text-xl text-black">Some representative placeholder content for the third slide.</p>
+                        <h5 className="text-xl text-black">CHANEL Chance Eau Tendre Perfume Spray</h5>
+                        <p className="text-lg text-black">Refreshing, oriental, and woody fragrance leaves you feeling cool and confident
+Ideal for a variety of occasions
+A fragrance that has been widely accepted</p>
                     </div>
                 </div>
             </div>

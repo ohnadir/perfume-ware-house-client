@@ -5,10 +5,12 @@ import usePerfumes from '../Hooks/usePerfumes';
 const AllInventories = ({perfume}) => {
     const { name, img, price, stock, _id } = perfume;
     const [perfumes, setPerfumes] = usePerfumes();
+    
     const handleDeleteItem = (id) => {
+        
         const proceed = window.confirm('Are you Sure');
         if (proceed) {
-            const url = `http://localhost:5000/perfume/${id}`
+            const url = `https://ancient-bayou-60727.herokuapp.com/perfume/${id}`
             fetch(url, {
                 method: 'DELETE',
             })
@@ -16,10 +18,10 @@ const AllInventories = ({perfume}) => {
                 .then(data => {
                     const remaining = perfumes.filter(item => item._id !== id);
                     setPerfumes(remaining);
+                    window.location.reload();
             })
         }
     }
-
     return (
             <div className='w-[280px] sm:w-[450px]  mx-auto border mb-4'>
                 <div className='flex items-center gap-8 p-2 relative'>
