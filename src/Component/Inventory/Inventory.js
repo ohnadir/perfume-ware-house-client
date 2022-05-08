@@ -5,7 +5,6 @@ const Inventory = () => {
     const { id } = useParams();
     const [product, setProduct] = useState({});
     const [number, setNumber] = useState('');
-    const [reduce, setReduce] = useState(0);
     const { name, img, price, stock, _id } = product;
     const navigate = useNavigate();
     const handleManageInventories = () => {
@@ -65,7 +64,7 @@ const Inventory = () => {
         });
     }
     return (
-        <div className='py-20'>
+        <div  className='py-20'>
             <div className='flex justify-center items-center '>
                 <div className='w-[250px] sm:w-[500px] mx-auto shadow-xl p-2 sm:flex  justify-center items-center'>
                     <img className='w-[200px]' src={img} alt="" />
