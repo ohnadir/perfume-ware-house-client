@@ -40,7 +40,7 @@ const Navbar = () => {
             {open && (
                 <div className="bg-slate-600 absolute top-full left-0 flex flex-col w-full pb-8 md:hidden">
                     <div className=" flex gap-4 flex-col items-center text-xl">
-                        <CustomLink to='/home'>Home</CustomLink>
+                        <CustomLink to='/inventories'>Inventories</CustomLink>
                         <CustomLink to='/blogs'>Blogs</CustomLink>
                         {user && <>
                             <CustomLink to='/manageitems'>Manage Items</CustomLink>
